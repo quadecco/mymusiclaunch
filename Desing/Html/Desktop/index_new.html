@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>homepage</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href='css/fonts.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,900' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.selectbox.min.js"></script> 
+		<script>
+			$( document ).ready(function() {
+				/*---------search form------------*/
+				$(function(){
+				   $("#adv_search").click(function () {
+					  $(this).text(function(i, text){
+						  return text === "Advanced search" ? "Basic search" : "Advanced search";
+					  })
+					  $("#advanced_block").toggle();
+				   });
+				})
+				/*---------/search form------------*/
+			});
+		</script>
+		<script>  
+			/*---------select style------------*/
+			(function($) {  
+				$(function() {  
+					$('select').selectbox();  
+				})  
+			})(jQuery)  
+		</script>
+	</head>
+	<body class="home new_home">
+	<div style="z-index: 2147483647; display: block; padding-right: 17px;" class="modal fade in">
+		<div class="modal-backdrop fade in" style="height: 638px;"></div>
+		<div class="modal-dialog">
+			<div style="background-color:#b81f21" class="modal-content">
+				<div class="modal-header">
+					<h3 style="color:white" id="myModalLabel" class="modal-title">Thanks! You’re all set!  </h3>
+				</div>
+				<div class="modal-body">
+					<!--viewError.-->
+					<p><span style="color:white" id="infotext">ext, we are going to take you to your profile. Please spend some time making it as complete as possible so that other community members can get a good sense of your background.</span></p>
+				</div>
+				<div style="padding: 5px 5px 15px 260px;">
+					<!--class="modal-footer"-->
+					<button style="color:black;" data-dismiss="modal" type="button" class="btn btn-default">Next</button>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!--CONTENT-->
+		<div class="content">
+			<div class="login_block" style="display: none;">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="login_block_right">
+					<form class="login_form">
+						<label>USERNAME</label>
+						<input id="username" type="text" name="username">
+						<div class="clear"></div>
+						<label>PASSWORD</label>
+						<input id="registerpassword" type="password" name="password">
+						<div class="clear"></div>
+						<a href="#" class="forgot">Forgot username or password?</a>
+						<input id="loginsubmit" type="submit" value="VERIFY">
+						<div class="clear"></div>
+					</form>
+					<div class="clear30"></div>
+					<a href="#" class="register_btn">NEW? REGISTER</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="search_block" style="display: none;">
+				<a href="#" class="square_logo"><img src="images/square_logo.png"></a>
+				<div class="search_block_right">
+					<a href="#" class="transparent_btn fr">GO TO MY PORTFOLIO</a>
+					<div class="clear"></div>
+					<p class="block_name">SEARCH TOOL</p>
+					<div class="clear"></div>
+					<form class="search_form">
+						<select>
+							<option disabled="disabled" selected>City</option>
+							<option>City1</option>
+							<option>City2</option>
+							<option>City3</option>
+						</select>
+						<select>
+							<option disabled="disabled" selected>Skills</option>
+							<option>Skills1</option>
+							<option>Skills2</option>
+							<option>Skills3</option>
+						</select>
+						<select multiple>
+							<option disabled="disabled" selected>Genres</option>
+							<option>Genres1</option>
+							<option>Genres2</option>
+							<option>Genres3</option>
+						</select>
+						<div id="advanced_block" class="advanced_block">
+							<div class="clear25"></div>
+							<input type="text" placeholder="name">
+							<select>
+								<option disabled="disabled" selected>account type</option>
+								<option>student</option>
+								<option>alumni</option>
+								<option>professional</option>
+								<option>panelist</option>
+								<option>mentor</option>
+							</select>
+							<select>
+								<option disabled="disabled" selected>school</option>
+								<option>school1</option>
+								<option>school1</option>
+								<option>school1</option>
+								<option>school1</option>
+								<option>school1</option>
+								<option>school1</option>
+							</select>
+						</div>
+						<div class="clear50"></div>
+						<input type="button" class="button find_btn" value="FIND MATCHES">
+						<a href="javascript:void(0);" id="adv_search" class="button brandon adv_search">Advanced search</a>
+						<div class="clear"></div>
+					</form>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="register_option_block" style="display: none">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="register_option_block_right">
+					<p class="block_name">I AM...</p>
+					<form class="register_option_form">
+						<input id="student" type="radio" name="musicLevel" checked>
+						<label for="student"><span class="rb"></span>a <b>STUDENT</b> at a music school.</label>
+						<div class="clear10"></div>
+						<input id="alumni" type="radio" name="musicLevel">
+						<label for="alumni"><span class="rb"></span>an <b>ALUMNI</b> from a music school.</label>
+						<div class="clear10"></div>
+						<input id="professionl" type="radio" name="musicLevel">
+						<label for="professionl"><span class="rb"></span>a music <b>INDUSTRY PROFESSIONAL.</b></label>
+						<div class="clear10"></div>
+						<input id="studentsubmit" type="submit" value="SUBMIT">
+					</form>
+				</div>
+			</div>
+			<div class="register_student_block" style="display: none;">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="register_block_right">
+					<form class="register_form">
+						<p><b>Rad!</b> MML is currently available at a selected music schools. To check your status and activate your account, please provide: </p>
+						<label>FIRST NAME</label>
+						<input id="stfirstname" type="text" name="firstname">
+						<div class="clear25"></div>
+						<label>LAST NAME</label>
+						<input id="stfirstname" type="text" name="lastname">
+						<div class="clear25"></div>
+						<label>EMAIL</label>
+						<input id="stemail" type="email" name="email">
+						<div class="clear25"></div>
+						<label>SCHOOL</label>
+						<input id="stcompany" type="text" name="company">
+						<div class="clear50"></div>
+						<input id="studentsubmit" type="submit" value="SUBMIT">
+						<a href="#"  class="forgot fr">Don't see your school listed?</a>
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="register_professionals_block register_professionals_step_1" style="display: none;">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="register_block_right">
+					<form class="register_form">
+						<p><b>Cool!</b> Do you have an invitation code?</p>
+						<input id="havecode" type="radio" name="havecode" checked>
+						<label for="havecode"><span class="rb"></span>Yes</label>
+						<div class="clear10"></div>
+						<input id="havntcode" type="radio" name="havecode">
+						<label for="havntcode"><span class="rb"></span>No</label>
+						<div class="clear100"></div>
+						<input id="studentsubmit" type="submit" value="SUBMIT">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="register_professionals_block  register_professionals_code" style="display: block;">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="register_block_right">
+					<form class="register_form">
+						<p><b>Perfect!</b> Please enter the invitation code below:</p>
+						<div class="clear50"></div>
+						<input style="font-size: 32px;height: 56px;width: 490px;margin-left: 35px;" id="stfirstname" type="text" name="firstname" placeholder="mymusic98075">
+						<div class="clear150"></div>
+						<input id="studentsubmit" type="submit" value="SUBMIT">
+					</form>
+				</div>
+				<div class="register_professionals_block  register_professionals_step_2" style="display: none;">
+				<a href="#" class="login_logo"><img src="images/homepage_logo.png"></a>
+				<div class="register_block_right">
+					<form class="register_form">
+						<p><b>You're almost there!</b> Here is the info we have on<br>file for you. Please verify to activate your acount:</p>
+						<label>FIRST NAME</label>
+						<input id="stfirstname" type="text" name="firstname">
+						<div class="clear25"></div>
+						<label>LAST NAME</label>
+						<input id="stfirstname" type="text" name="lastname">
+						<div class="clear25"></div>
+						<label>EMAIL</label>
+						<input id="stemail" type="email" name="email">
+						<div class="clear25"></div>
+						<label>COMPANY</label>
+						<input id="stcompany" type="text" name="company">
+						<div class="clear50"></div>
+						<input id="studentsubmit" type="submit" value="VERIFY">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/content-->
+		<!--FOOTER-->
+		<div class="footer content">
+			<a href="#" class="footer_logo"><img src="images/footer_logo_sm.png"></a>
+			<span class="copy">&copy;2014 mymusiclaunch.com, all rights reserved</span>
+			<div class="footer_soc">
+				<a class="soc_1" target="_blank" href="https://www.facebook.com/MmlPlatform"></a>
+				<a class="soc_2" target="_blank" href="https://twitter.com/MmlPlatform"></a>
+				<a class="soc_3" target="_blank" href="https://www.youtube.com/channel/UCdLraz4mn0Qu0w_rfvMTeSA"></a>
+				<a class="soc_4" target="_blank" href="https://vine.co/u/1194670538933616640"></a>
+				<a class="soc_5" target="_blank" href="https://instagram.com/mmlplatform/"></a>
+				<a class="soc_6" target="_blank" href="https://soundcloud.com/mmlplatform"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/footer-->
+	</body>
+</html>

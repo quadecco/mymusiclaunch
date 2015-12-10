@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>portfolio group</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href='css/fonts.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- jQuery Plugin scripts -->
+		<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+		
+		<!-- Slider Kit scripts -->
+		<script type="text/javascript" src="js/jquery.sliderkit.1.9.2.pack.js"></script>
+		
+		<script>
+			$( document ).ready(function() {
+				/*--------error close --------*/
+				$("#error_close").click(function(){
+					$("#error_popup").css('display', 'none');
+				});
+				/*--------/error_close --------*/
+				$(function(){
+				   $("#adv_search").click(function () {
+					  $(this).text(function(i, text){
+						  return text === "Advanced search" ? "Basic search" : "Advanced search";
+					  })
+					  $("#advanced_block").toggle();
+				   });
+				});
+				$("#edit_img_btn").click(function () {
+					$(".edit_img").toggle();
+				});
+				$("#edit_snapshot_btn").click(function () {
+					$(".logic_block_data").toggle();
+					$(".logic_block_data_edit").toggle();
+				});
+				$("#edit_discography_btn").click(function () {
+					$(".discography_block_data").toggle();
+					$(".discography_block_data_edit").toggle();
+				});
+				$("#edit_biography_btn").click(function () {
+					$(".biography_block p").toggle();
+					$(".biography_block textarea").toggle();
+				});
+				$("#edit_video_biography_btn").click(function () {
+					$("#video_biography").toggle();
+					$("#browse_video").toggle();
+				});
+				$("#edit_audio_btn").click(function () {
+					$("#remove_track").toggle();
+					$("#add_track").toggle();
+					$("#calendar_logic_block").toggle();
+				});
+				$('.btn_changes').click(function(){
+					$(this).toggleClass( "edit_btn" );
+					$(this).toggleClass( "save_btn" );
+					$(this).text(function(i, text){
+						return text === "" ? "save" : "";
+					})
+				})
+			});
+		</script>
+		<script type="text/javascript">
+			$(window).load(function(){
+				$(".sliderkit").sliderkit({
+					shownavitems:5,
+					scroll:1,
+					mousewheel:true,
+					circular:true,
+					start:2
+				});
+				
+				/*------browse file button------------*/
+				var intervalFunc = function () {
+					$('#file-name').html($('#file-type').val());
+				};
+				$('#browse-click').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type').click();
+					setInterval(intervalFunc, 1);
+					return false;
+				});
+				var intervalFunc1 = function () {
+					$('#file-name-1').html($('#file-type-1').val());
+				};
+				$('#browse-click-1').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type-1').click();
+					setInterval(intervalFunc1, 1);
+					return false;
+				});
+				var intervalFunc2 = function () {
+					$('#file-name-2').html($('#file-type-2').val());
+				};
+				$('#browse-click-2').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type-2').click();
+					setInterval(intervalFunc2, 1);
+					return false;
+				});
+			});			
+		</script>
+	</head>
+	<body>
+		<!--HEADER-->
+		<div class="header big_header">
+			<div class="content">
+				<a href="#" class="back">back to search results</a>
+				<ul class="second_nav">
+					<li><a href="#">login</a></li>
+					<li><a href="#">messages</a></li>
+					<li><a href="#">settings</a></li>
+				</ul>
+				<div class="clear30"></div>
+				<a href="#" class="edit">edit header</a>
+				<a href="#" class="logo"><img src="images/logo_presents.png"></a>
+				<div class="clear"></div>
+				<h1 class="group_name">sacramento killers</h1>
+				<div class="clear"></div>
+				<a href="#" class="button verified">verified</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--/header-->
+		
+		<!--CONTENT-->
+		<div class="content">
+			<!--   left column     -->
+			<div class="column_third">
+				<a href="#" class="profile_avatar">
+					<img src="images/img1.png">
+				</a>
+				<div class="clear60"></div>
+				<a href="#" class="gray_bottom_btn">contact</a>
+				<a href="#" class="gray_bottom_btn">follow <span>(89)</span></a>
+				<div class="clear30"></div>
+
+				<div class="logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_snapshot_btn"></a>
+					<h2>snapshot</h2>
+					<div class="clear"></div>
+					<div class="logic_block_data">
+						<div class="property_block">
+							<label>Name</label>
+							<div class="clear"></div>
+							<span>Sacramento Killers</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Genres</label>
+							<div class="clear"></div>
+							<span>HipHop, EDM, Gospel, Country</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>City</label>
+							<div class="clear"></div>
+							<span>Los Angeles, California</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Members</label>
+							<div class="clear"></div>
+							<table class="members">
+								<tr>
+									<td style="width: 70px;">
+										<img src="images/img_sm.png">
+									</td>
+									<td>
+										<a href="#" class="member">tommy thompson</a>
+										<div calss="clear"></div>
+										<span>123.455 followers</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 70px;">
+										<img src="images/img_sm.png">
+									</td>
+									<td>
+										<a href="#" class="member">tommy thompson</a>
+										<div calss="clear"></div>
+										<span>123.455 followers</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 70px;">
+										<img src="images/img_sm.png">
+									</td>
+									<td>
+										<a href="#" class="member">tommy thompson</a>
+										<div calss="clear"></div>
+										<span>123.455 followers</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 70px;">
+										<img src="images/img_sm.png">
+									</td>
+									<td>
+										<a href="#" class="member">tommy thompson</a>
+										<div calss="clear"></div>
+										<span>123.455 followers</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 70px;">
+										<img src="images/img_sm.png">
+									</td>
+									<td>
+										<a href="#" class="member">tommy thompson</a>
+										<div calss="clear"></div>
+										<span>123.455 followers</span>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="property_block">
+							<label>Record Imprint</label>
+							<div class="clear"></div>
+							<span>Sony Records</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Record Imprint</label>
+							<div class="clear"></div>
+							<span>Sony Records</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<form class="logic_block_data_edit">
+						<div class="property_block property_block_border">
+							<label>Name</label>
+							<div class="clear"></div>
+							<input type="text" value="Sacramento Killers">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Roles</label>
+							<div class="clear"></div>
+							<input type="text" value="Musician, Producer, Vocalist">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Genres</label>
+							<div class="clear"></div>
+							<input type="text" value="HipHop, EDM, Gospel, Country">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>City</label>
+							<div class="clear"></div>
+							<input type="text" value="Los Angeles, California">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>School</label>
+							<div class="clear"></div>
+							<textarea>Musutuan's Institute, Hollywood Major: graduation year: 1999</textarea>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Additional education</label>
+							<div class="clear"></div>
+							<textarea>Musutuan's Institute, Hollywood Major: graduation year: 1999</textarea>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Groups</label>
+							<div class="clear"></div>
+							<input type="text" value="Sacramento Killers">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Companies</label>
+							<div class="clear"></div>
+							<input type="text" value="Sony Records">
+							<div class="clear"></div>
+						</div>
+					</form>
+				</div>
+				<!------>
+				<div class="logic_block">
+					<h2>social media dashboard</h2>
+					<div class="clear"></div>
+					<table class="media_dashboard">
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc1"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc6"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc7"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc5"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc4"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc2"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+					</table>
+					<div class="twit_block">
+						<img src="images/twitter_block.jpg">
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="following_edit_btn"></a>
+					<h2>following <span>(235)</span></h2>
+					<div class="clear"></div>
+					<table class="members">
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--   /left column     -->
+			
+			<!--   carusel block    -->
+			<div class="column_two_thirds">
+				<!-- Start carousel-demo2 -->
+				<div class="sliderkit carousel-demo2">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_img_btn"></a>
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img1.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img2.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img3.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img4.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img5.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img6.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img7.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a href="#" title="Scroll to the left"><span>Previous</span></a></div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a href="#" title="Scroll to the right"><span>Next</span></a></div>
+					</div>
+				</div>				
+				<!-- // end of carousel-demo2 -->
+			</div>
+			<!--   /carusel block    -->
+			
+			<!--   center column     -->
+			<div class="column_third">
+				<div class="logic_block red_logic_block biography_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_biography_btn"></a>
+					<h2>biography</h2>
+					<div class="clear"></div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tincidunt odio, quis cursus metus. Proin pulvinar massa eget enim mattis sagittis. Nunc a risus ante. Fusce nec faucibus ex. Vivamus ornare id mauris sollicitudin mattis. Aliquam ornare dui vitae purus consequat iaculis. Quisque consequat consequat magna sed fermentum. Class aptent taciti sociosqu ad litora </p>
+					<textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tincidunt odio, quis cursus metus. Proin pulvinar massa eget enim mattis sagittis. Nunc a risus ante. Fusce nec faucibus ex. Vivamus ornare id mauris sollicitudin mattis. Aliquam ornare dui vitae purus consequat iaculis. Quisque consequat consequat magna sed fermentum. Class aptent taciti sociosqu ad litora </textarea>
+				</div>
+				<!------>
+				<div class="logic_block red_logic_block" style="height: 210px;">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_video_biography_btn"></a>
+					<h2>video biography</h2>
+					<div class="clear"></div>
+					<div class="video_biography" id="video_biography">
+					
+					</div>
+					<div class="browse_video" id="browse_video">
+						<!-- filename to display to the user -->
+						<p id="file-name" class="margin-10 bold-10 gray_input"></p>
+						<div class="clear"></div>
+						<!-- Hide this from the users view with css display:none; -->
+						<input class="display-none" id="file-type" type="file" size="4" name="file"/>
+						<!-- Style this button with type image or css whatever you wish -->
+						<input id="browse-click" type="button" class="button" value="Browse"/>
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_audio_btn"></a>
+					<h2>my tracks</h2>
+					<div class="clear"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="audio_player">
+						<img src="images/audio_player.jpg" style="width: 323px; height: auto;">
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_video_btn"></a>
+					<h2>my videos</h2>
+					<div class="clear"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="video_player">
+						<img src="images/video_player.jpg" style="width: 323px; height: auto;">
+					</div>
+					<div class="clear20"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<!--   /center column     -->
+			
+			<!--   right column     -->
+			<div class="column_third">
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_discography_btn"></a>
+					<h2>discography</h2>
+					<div class="clear"></div>
+					<div class="discography_block_data">
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<form class="discography_block_data_edit">
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+					</form>
+				</div>
+				<!------>
+				<div class="logic_block" id="calendar_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_snapshot_btn"></a>
+					<h2 class="fl">september, 2014</h2>
+					<a href="#" class="calendar_arrow calendar_arrow_next"></a>
+					<a href="#" class="calendar_arrow calendar_arrow_prew"></a>
+					<div class="clear"></div>
+					<table class="calendar">
+						<tr>
+							<td style="width: 8px;">
+								<span class="been"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="now"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+								<span class="place">Park Avenue Rutherford, NJ 070707</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="will_be"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+								<span class="place">Park Avenue Rutherford, NJ 070707</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block" id="remove_track">
+					<a href="javascript: void(0)" class="save_btn" id="">save</a>
+					<h2 class="fl">skills</h2>
+					<form class="skills">
+						<input type="text" value="Bass Guitar">
+						<input type="text" value="Ranked #1, Los Angeles">
+						<input type="text" value="HIP HOP">
+						<div class="clear"></div>
+						<div>
+							<!-- filename to display to the user -->
+							<p id="file-name-1" class="margin-10 bold-10 gray_input"></p>
+							<div class="clear"></div>
+							<!-- Hide this from the users view with css display:none; -->
+							<input class="display-none" id="file-type-1" type="file" size="4" name="file"/>
+							<!-- Style this button with type image or css whatever you wish -->
+							<input id="browse-click-1" type="button" class="button" value="Browse"/>
+						</div>
+						<div class="clear"></div>
+						<input type="sumit" value="remove track" class="remove">
+					</form>	
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block" id="add_track">
+					<a href="javascript: void(0)" class="save_btn" id="">save</a>
+					<h2 class="fl">skills</h2>
+					<form class="skills">
+						<input type="text" value="Bass Guitar">
+						<input type="text" value="Ranked #1, Los Angeles">
+						<input type="text" value="HIP HOP">
+						<div class="clear"></div>
+						<div>
+							<!-- filename to display to the user -->
+							<p id="file-name-2" class="margin-10 bold-10 gray_input"></p>
+							<div class="clear"></div>
+							<!-- Hide this from the users view with css display:none; -->
+							<input class="display-none" id="file-type-2" type="file" size="4" name="file"/>
+							<!-- Style this button with type image or css whatever you wish -->
+							<input id="browse-click-2" type="button" class="button" value="Browse"/>
+						</div>
+						<div class="clear"></div>
+						<input type="sumit" value="add track" class="remove">
+					</form>	
+				</div>
+			</div>
+			<!--   /right column     -->
+			<div class="clear"></div>
+		</div>
+		<!--/content-->
+		<!--FOOTER-->
+		<div class="footer content">
+			<a href="#" class="footer_logo"><img src="images/footer_logo_color.png"></a>
+			<span class="copy">&copy;2014 mymusiclaunch.com, all rights reserved</span>
+			
+			<div class="footer_soc">
+				<a href="#" class="soc_1"></a>
+				<a href="#" class="soc_2"></a>
+				<a href="#" class="soc_3"></a>
+				<a href="#" class="soc_4"></a>
+				<a href="#" class="soc_5"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/footer-->
+	</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>portfolio search results</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href='css/fonts.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.selectbox.min.js"></script> 
+		<script>
+			$( document ).ready(function() {
+				/*-------------menu-pop-up-show---------------*/
+				$("#nav_btn").click(function(){
+					$("#menu").css('display', 'block');
+				});
+				$("#close_btn").click(function(){
+					$("#menu").css('display', 'none');
+				});
+				$(document).on('click.mWindow', function(e){
+					if ($(e.target).closest('#menu').length == 0 && $(e.target).closest('#nav_btn').length == 0) {
+						$('#menu').hide(); 
+					}
+				});
+				/*-------------/menu-pop-up-show---------------*/
+				/*--------error close --------*/
+				$("#error_close").click(function(){
+					$("#error_popup").css('display', 'none');
+				});
+				/*--------/error_close --------*/
+				$(function(){
+				   $("#adv_search").click(function () {
+					  $(this).text(function(i, text){
+						  return text === "Advanced search" ? "Basic search" : "Advanced search";
+					  })
+					  $("#advanced_block").toggle();
+				   });
+				})
+			});
+		</script>
+		<script>  
+			(function($) {  
+				$(function() {  
+					$('select').selectbox();  
+				})  
+			})(jQuery)  
+		</script>  
+	</head>
+	<body>
+		<div class="popup_left menu" id="menu">
+			<a href="javascript: void(0);" id="close_btn" class="close_btn"></a>
+			<div class="clear70"></div>
+			<span>collaborate</span>
+			<ul class="collaborate">
+				<li><a href="#">artists</a></li>
+				<li><a href="#">producers</a></li>
+				<li><a href="#">artists</a></li>
+				<li><a href="#">producers</a></li>
+				<li><a href="#">artists</a></li>
+				<li><a href="#">producers</a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul class="mane_nav">
+				<li><a href="#">discover</a></li>
+				<li><a href="#">mentor</a></li>
+				<li><a href="#">what's inside</a></li>
+				<li><a href="#">contact</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="error_popup" id="error_popup">
+			<div class="error_body">
+				<a href="#" class="close" id="error_close"></a>
+				<p>eh there partner, not so fast!<br>this feature is reserved for registered members.</p>
+				<div class="clear30"></div>
+				<a href="#" class="button white_button">login here</a>
+			</div>
+		</div>
+		<!--HEADER-->
+		<div class="header">
+			<div class="content">
+				<a href="#" class="nav_btn" id="nav_btn"></a>
+				<ul class="second_nav">
+					<li><a href="#">login</a></li>
+					<li><a href="#">messages</a></li>
+					<li><a href="#">settings</a></li>
+				</ul>
+				<a href="#" class="logo"><img src="images/logo_small.png"></a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--/header-->
+		
+		<!--CONTENT-->
+		<div class="content">
+			<form class="search_form top_search border_bottom">
+				<label class="fl">search</label>
+				<select>
+					<option disabled="disabled" selected>City</option>
+					<option>City1</option>
+					<option>City2</option>
+					<option>City3</option>
+				</select>
+				<select>
+					<option disabled="disabled" selected>Skills</option>
+					<option>Skills1</option>
+					<option>Skills2</option>
+					<option>Skills3</option>
+				</select>
+				<select>
+					<option disabled="disabled" selected>Genres</option>
+					<option>Genres1</option>
+					<option>Genres2</option>
+					<option>Genres3</option>
+				</select>
+				<div id="advanced_block" class="advanced_block">
+					<div class="clear10"></div>
+					<input type="text" placeholder="name">
+					<select>
+						<option disabled="disabled" selected>account type</option>
+						<option>student</option>
+						<option>alumni</option>
+						<option>professional</option>
+						<option>panelist</option>
+						<option>mentor</option>
+					</select>
+					<select>
+						<option disabled="disabled" selected>school</option>
+						<option>school1</option>
+						<option>school1</option>
+						<option>school1</option>
+						<option>school1</option>
+						<option>school1</option>
+						<option>school1</option>
+					</select>
+					<select>
+						<option disabled="disabled" selected>roles</option>
+						<option>skill 1</option>
+						<option>skill 1</option>
+						<option>skill 1</option>
+						<option>skill 1</option>
+						<option>skill 1</option>
+						<option>skill 1</option>
+					</select>
+				</div>
+				<input type="button" class="button" value="search">
+				<a href="javascript:void(0);" id="adv_search" class="button brandon adv_search">Advanced search</a>
+				<div class="clear"></div>
+			</form>
+			<div class="clear"></div>
+			<h2>portfolio_search_results</h2>
+			<div class="border_bottom search_result">
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">2</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<h2>portfolio_search_results</h2>
+			<div class="search_result">
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">2</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="singer">	
+					<span class="singer_num">1</span>
+					<img src="images/img.png">
+					<span class="singer_name">eddie g-man</span>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/content-->
+		<!--FOOTER-->
+		<div class="footer content">
+			<a href="#" class="footer_logo"><img src="images/footer_logo_color.png"></a>
+			<span class="copy">&copy;2014 mymusiclaunch.com, all rights reserved</span>
+			
+			<div class="footer_soc">
+				<a href="#" class="soc_1"></a>
+				<a href="#" class="soc_2"></a>
+				<a href="#" class="soc_3"></a>
+				<a href="#" class="soc_4"></a>
+				<a href="#" class="soc_5"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/footer-->
+	</body>
+</html>

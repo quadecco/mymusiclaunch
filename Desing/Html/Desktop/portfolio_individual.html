@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>portfolio individual</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href='css/fonts.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100,400,700' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- jQuery Plugin scripts -->
+		<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+		
+		<!-- Slider Kit scripts -->
+		<script type="text/javascript" src="js/jquery.sliderkit.1.9.2.pack.js"></script>
+		
+		<script>
+			$( document ).ready(function() {
+				/*--------error close --------*/
+				$("#error_close").click(function(){
+					$("#error_popup").css('display', 'none');
+				});
+				/*--------/error_close --------*/
+				$(function(){
+				   $("#adv_search").click(function () {
+					  $(this).text(function(i, text){
+						  return text === "Advanced search" ? "Basic search" : "Advanced search";
+					  })
+					  $("#advanced_block").toggle();
+				   });
+				});
+				$("#edit_img_btn").click(function () {
+					$(".edit_img").toggle();
+				});
+				$("#edit_snapshot_btn").click(function () {
+					$(".logic_block_data").toggle();
+					$(".logic_block_data_edit").toggle();
+				});
+				$("#edit_discography_btn").click(function () {
+					$(".discography_block_data").toggle();
+					$(".discography_block_data_edit").toggle();
+				});
+				$("#edit_biography_btn").click(function () {
+					$(".biography_block p").toggle();
+					$(".biography_block textarea").toggle();
+				});
+				$("#edit_video_biography_btn").click(function () {
+					$("#video_biography").toggle();
+					$("#browse_video").toggle();
+				});
+				$("#edit_audio_btn").click(function () {
+					$("#remove_track").toggle();
+					$("#add_track").toggle();
+					$(".player").toggle();
+				});
+				$('.btn_changes').click(function(){
+					$(this).toggleClass( "edit_btn" );
+					$(this).toggleClass( "save_btn" );
+					$(this).text(function(i, text){
+						return text === "" ? "save" : "";
+					})
+				})
+				$('#popup_tour_block_step_1 .white_btn').click(function(){
+					$('#popup_tour_block_step_1').css('display' , 'none');
+					$('#popup_tour_block_step_2').css('display' , 'block');
+				})
+				$('#skip_1').click(function(){
+					$('#warning_1').css('display' , 'block');
+				})
+				$('#guided_later_btn').click(function(){
+					$('#warning_1').css('display' , 'none');
+					$('#warning_2').css('display' , 'block');
+				})
+				$('#got_it').click(function(){
+					$('#popup_tour').css('display' , 'none');
+				})
+				$('#take_back').click(function(){
+					$('#warning_1').css('display' , 'none');
+				})
+				$('#desktop_btn').click(function(){
+					$('#warning_3').css('display' , 'block');
+				})
+				$('#got_it_info').click(function(){
+					$('#warning_3').css('display' , 'none');
+				})
+			});
+		</script>
+		<script type="text/javascript">
+			$(window).load(function(){
+				/*------browse file button------------*/
+				var intervalFunc = function () {
+					$('#file-name').html($('#file-type').val());
+				};
+				$('#browse-click').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type').click();
+					setInterval(intervalFunc, 1);
+					return false;
+				});
+				var intervalFunc1 = function () {
+					$('#file-name-1').html($('#file-type-1').val());
+				};
+				$('#browse-click-1').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type-1').click();
+					setInterval(intervalFunc1, 1);
+					return false;
+				});
+				var intervalFunc2 = function () {
+					$('#file-name-2').html($('#file-type-2').val());
+				};
+				$('#browse-click-2').on('click', function () { // use .live() for older versions of jQuery
+					$('#file-type-2').click();
+					setInterval(intervalFunc2, 1);
+					return false;
+				});
+			});			
+			function MenuHref(el){
+				for (i=1; i<7; i++){
+					var ElementId = '#popup_settings_block_' + i;
+					$(ElementId).css('display','none')
+				}	
+				document.getElementById(el).style.display = "block";
+			}
+		</script>
+		<!-- Slider Kit launch -->
+		<script type="text/javascript">
+			$(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+				// Photo slider > Bullets nav
+				$(".photoslider-bullets").sliderkit({
+					auto:false,
+					circular:true,
+					mousewheel:true,
+					//shownavitems:3,
+					panelfx:"sliding",
+					panelfxspeed:1000,
+					panelfxeasing:"easeOutExpo" // "easeOutExpo", "easeInOutExpo", etc.
+				});
+				// Carousel > Demo #2
+				$(".carousel-demo2").sliderkit({
+					shownavitems:5,
+					scroll:1,
+					mousewheel:true,
+					circular:true,
+					start:2
+				});
+			});	
+		</script>
+
+	</head>
+	<body>
+		<!-- pop-up GUIDED TOUR -->
+		<div class="popup_tour" id="popup_tour">
+			<div class="popup_tour_block" id="popup_tour_block_step_1">
+				<p>Hey bro.</p>
+				<p>Welcome to your new portfolio!</p>
+				<p>It's lookin' a lil empty. so let' fix that.</p>
+				<div class="clear50"></div>
+				<a href="#" class="white_btn">Next</a>
+			</div>
+			<div class="popup_tour_block" id="popup_tour_block_step_2">
+				<p style="width: 405px;">First, let's get you a spiffy profile photo.</p>
+				<div class="clear30"></div>
+				<a href="#" class="white_btn" style="width: 345px;">upload from facebook</a>
+				<div class="clear"></div>
+				<a href="#" class="white_btn" id="desktop_btn" style="width: 345px;">upload from desktop</a>
+				<div class="clear"></div>
+				<a href="#" class="skip" id="skip_1">skip this step</a>
+				<div class="warning" id="warning_1">
+					<p>Are you sure you want to skip this step? You are way too handsome for a big question mark &lt;flattery&gt; &lt;flattery&gt;</p>
+					<div class="clear30"></div>
+					<a href="#" id="take_back">okay, take me back!</a>
+					<a href="#" class="gray" id="guided_later_btn">I'll do it later</a>
+				</div>
+				<div class="warning" id="warning_2">
+					<p>Okay, as a reminder, you can use the "edit" icon to go back and add one later.</p>
+					<div class="clear50"></div>
+					<a href="#" class="button fr" id="got_it">got it</a>
+				</div>
+				<div class="warning info" id="warning_3">
+					<p>Here's how it works... </p>
+					<ol>
+						<li>We ask you a series of questions</li>
+						<li>You give answers</li>
+						<li>We automatically turn the answers into a bio (which you can edit if you like)</li>
+					</ol>
+					<div class="clear"></div>
+					<a href="#" class="button fr" id="got_it_info">got it</a>
+				</div>
+			</div>
+		</div>
+		<!-- /pop-up GUIDED TOUR -->
+		<!-- pop-up SETTINGS -->
+		<div class="popup_settings" id="popup_settings">
+			<div class="popup_settings_block">
+				<div class="popup_settings_block_left">
+					<ul>
+						<li><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_1');" class="nav_1">account info</a></li>
+						<li><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_2');" class="nav_2">member history</a></li>
+						<li class="active"><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_3');" class="nav_3">notification preferences</a></li>
+						<li><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_4');" class="nav_4">display preferences</a></li>
+						<li><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_5');" class="nav_5">requests</a></li>
+						<li><a href="javascript: void(0);" onmouseover="MenuHref('popup_settings_block_6');" class="nav_6">billing info</a></li>
+					</ul>
+				</div>
+				<div class="popup_settings_block_right">
+					<div class="popup_settings_block_content" id="popup_settings_block_1">
+						<form>
+							<ul>
+								<li>
+									<label>Account type</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="BASIC">
+									<div class="clear"></div>
+								</li>
+								<li>
+									<label>Login Info</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="Name">
+									<div class="clear"></div>
+									<input type="password" placeholder="Password">
+									<div class="clear"></div>
+									<input type="email" placeholder="Email">
+									<div class="clear"></div>
+									<input type="tel" placeholder="Phone">
+									<div class="clear"></div>
+								</li>
+							</ul>
+							<input type="button" value="save">
+							<a href="#" class="button">cancel</a>
+						</form>
+					</div>
+					<div class="popup_settings_block_content" id="popup_settings_block_2">
+						<form>
+							<ul>
+								<li>
+									<label>Member since</label>
+									<div class="clear"></div>
+									<input type="text" value="Sept. 09, 2014">
+									<div class="clear"></div>
+								</li>
+								<li>
+									<label>Login / activity history</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="">
+									<div class="clear"></div>
+								</li>
+								<li>
+									<label>Credits / bonuses earned</label>
+									<div class="clear"></div>
+									<input type="text" value="20">
+									<div class="clear"></div>
+								</li>
+							</ul>
+							<input type="button" value="save">
+							<a href="#" class="button">cancel</a>
+						</form>
+					</div>
+					<div class="popup_settings_block_content" id="popup_settings_block_3" style="display: block;">
+						<form>
+							<ul>
+								<li>
+									<label class="active">SMS</label>
+									<div class="clear"></div>
+									<input type="text" value="+111111111111">
+									<div class="clear10"></div>
+								</li>
+								<li>
+									<label>Email</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="">
+								</li>
+							</ul>
+							<input type="button" value="save">
+							<a href="#" class="button">cancel</a>
+						</form>
+					</div>
+					<div class="popup_settings_block_content" id="popup_settings_block_4">
+						<form>
+							<ul>
+								<li>
+									<label>Header image</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="Desktop version">
+									<input type="button" class="browse_btn" value="browse">
+									<div class="clear"></div>
+									<input type="text" placeholder="Desktop version">
+									<input type="button" class="browse_btn" value="browse">
+									<div class="clear10"></div>
+								</li>
+								<li>
+									<label class="active">Use real name or stage name in header (or both a.k.a.)?</label>
+									<div class="clear"></div>
+								</li>
+								<li>
+									<label>Skinning preferences</label>
+									<div class="clear"></div>
+								</li>
+							</ul>
+							<input type="button" value="save">
+							<a href="#" class="button">cancel</a>
+						</form>
+					</div>
+					<div class="popup_settings_block_content" id="popup_settings_block_5">
+						<form>
+							<ul>
+								<li>
+									<label>Request re-ranking</label>
+									<div class="clear"></div>
+									<input type="text" placeholder="enter email">
+									<div class="clear"></div>
+								</li>
+							</ul>
+							<input type="button" value="save">
+							<a href="#" class="button">cancel</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /pop-up SETTINGS -->
+		<!-- pop-up MESSAGING -->
+		<div class="popup_settings" id="popup_messaging">
+			<div class="popup_settings_block">
+				<div class="popup_settings_block_left">
+					<ul>
+						<li>
+							<span>
+								<a href="#" class="button">compose</a>
+								<div class="clear"></div>
+							</span>
+						</li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li class="active"><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+					</ul>
+				</div>
+				<div class="popup_settings_block_right">
+					<form>
+						<input type="text" placeholder="Write your message here...">
+						<input type="button" value="send">
+					</form>
+					<div class="scroll">
+						<div class="messages_field">
+							<div class="message">
+								<div class="message_img">
+									<span><img src="images/img_sm.png"></span>
+									<div class="clear"></div>
+								</div>
+								<div class="message_text">
+									<span class="name">tommy thompson</span>
+									<div class="clear10"></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis mi ut turpis elementum, vel auctor nisi finibus. </p>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="message">
+								<div class="message_img">
+									<span><img src="images/img_sm.png"></span>
+									<div class="clear"></div>
+								</div>
+								<div class="message_text">
+									<span class="name">You</span>
+									<div class="clear10"></div>
+									<p>Lorem ipsum dolor sit amet</p>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /pop-up MESSAGING -->
+		<!-- pop-up MESSAGING COMPOSE-->
+		<div class="popup_settings" id="popup_messaging_compose">
+			<div class="popup_settings_block">
+				<div class="popup_settings_block_left">
+					<ul>
+						<li>
+							<span>
+								<a href="#" class="button">compose</a>
+								<div class="clear10"></div>
+								<input type="text" value="Tommy Tho">
+								<div class="clear"></div>
+							</span>
+						</li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li class="active"><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+						<li><a href="javascript: void(0);">tommy thompson</a><a href="#" class="close_message"></a></li>
+					</ul>
+				</div>
+				<div class="popup_settings_block_right">
+					<form>
+						<input type="text" placeholder="Write your message here...">
+						<input type="button" value="send">
+					</form>
+					<div class="scroll">
+						<div class="messages_field">
+							<div class="message">
+								<div class="message_img">
+									<span><img src="images/img_sm.png"></span>
+									<div class="clear"></div>
+								</div>
+								<div class="message_text">
+									<span class="name">tommy thompson</span>
+									<div class="clear10"></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis mi ut turpis elementum, vel auctor nisi finibus. </p>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="message">
+								<div class="message_img">
+									<span><img src="images/img_sm.png"></span>
+									<div class="clear"></div>
+								</div>
+								<div class="message_text">
+									<span class="name">You</span>
+									<div class="clear10"></div>
+									<p>Lorem ipsum dolor sit amet</p>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /pop-up MESSAGING COMPOSE -->
+		<!--HEADER-->
+		<div class="header big_header">
+			<div class="content">
+				<a href="#" class="back">back to search results</a>
+				<ul class="second_nav">
+					<li><a href="#">login</a></li>
+					<li><a href="#">messages</a></li>
+					<li><a href="#">settings</a></li>
+				</ul>
+				<div class="clear30"></div>
+				<a href="#" class="edit">edit header</a>
+				<a href="#" class="logo"><img src="images/logo_presents.png"></a>
+				<div class="clear"></div>
+				<h1 class="singer_name">sacramento killers</h1>
+				<div class="clear"></div>
+				<h2 class="stage_name">a.k.a. mix master</h2>
+				<div class="clear"></div>
+				<a href="#" class="button verified">verified</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--/header-->
+		
+		<!--CONTENT-->
+		<div class="content">
+			<!--   left column     -->
+			<div class="column_third">
+				<a href="#" class="profile_avatar">
+					<img src="images/img1.png">
+				</a>
+				<div class="clear60"></div>
+				<a href="#" class="gray_bottom_btn">contact</a>
+				<a href="#" class="gray_bottom_btn">follow <span>(89)</span></a>
+				<div class="clear30"></div>
+
+				<div class="logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_snapshot_btn"></a>
+					<h2>snapshot</h2>
+					<div class="clear"></div>
+					<div class="logic_block_data">
+						<div class="property_block">
+							<label>Actual Name</label>
+							<div class="clear"></div>
+							<span>Tommy Thompson</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Stage Name</label>
+							<div class="clear"></div>
+							<span>Tommy Thompson</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Roles</label>
+							<div class="clear"></div>
+							<span>Musician, Producer, Vocalist</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Genres</label>
+							<div class="clear"></div>
+							<span>HipHop, EDM, Gospel, Country</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>City</label>
+							<div class="clear"></div>
+							<span>Los Angeles, California</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>School</label>
+							<div class="clear"></div>
+							<span>Musitian's Institute, Hollywood Major: graduation year: 1999</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Additional education</label>
+							<div class="clear"></div>
+							<span>Musitian's Institute, Hollywood Major: graduation year: 1999</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Groups</label>
+							<div class="clear"></div>
+							<span>Sacramento Killers</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Groups</label>
+							<div class="clear"></div>
+							<span>Sony Records</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Companies & Positions</label>
+							<div class="clear"></div>
+							<span>Sony Records</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Record Imprint</label>
+							<div class="clear"></div>
+							<span>Sony Records</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<form class="logic_block_data_edit">
+						<div class="property_block property_block_border">
+							<label>Name</label>
+							<div class="clear"></div>
+							<input type="text" value="Sacramento Killers">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Roles</label>
+							<div class="clear"></div>
+							<input type="text" value="Musician, Producer, Vocalist">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Genres</label>
+							<div class="clear"></div>
+							<input type="text" value="HipHop, EDM, Gospel, Country">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>City</label>
+							<div class="clear"></div>
+							<input type="text" value="Los Angeles, California">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>School</label>
+							<div class="clear"></div>
+							<textarea>Musutuan's Institute, Hollywood Major: graduation year: 1999</textarea>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Additional education</label>
+							<div class="clear"></div>
+							<textarea>Musutuan's Institute, Hollywood Major: graduation year: 1999</textarea>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Groups</label>
+							<div class="clear"></div>
+							<input type="text" value="Sacramento Killers">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Companies</label>
+							<div class="clear"></div>
+							<input type="text" value="Sony Records">
+							<div class="clear"></div>
+						</div>
+					</form>
+				</div>
+				<!------>
+				<div class="logic_block">
+					<h2>social media dashboard</h2>
+					<div class="clear"></div>
+					<table class="media_dashboard">
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc1"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc6"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc7"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc5"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc4"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<a href="#" class="media_dashboard_soc_img soc2"></a>
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span>123.455 followers</span>
+								<div class="clear"></div>
+								<a href="#" class="expand">expand</a>
+							</td>
+							<td style="width: 100px;">
+								<a href="#" class="button">follow</a>
+							</td>
+						</tr>
+					</table>
+					<div class="twit_block">
+						<img src="images/twitter_block.jpg">
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="following_edit_btn"></a>
+					<h2>following <span>(235)</span></h2>
+					<div class="clear"></div>
+					<table class="members">
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 70px;">
+								<img src="images/img_sm.png">
+							</td>
+							<td>
+								<p class="member">tommy thompson</p>
+								<div calss="clear"></div>
+								<span><a href="#">In-Training </a>/<a href="#"> Alumni</a><br><a href="#">Panelist </a>/<a href="#"> Mentor</a></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--   /left column     -->
+			
+			<!--   carusel block    -->
+			<div class="column_two_thirds">
+				<!-- Start carousel-demo2 -->
+				<div class="sliderkit carousel-demo2">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_img_btn"></a>
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img1.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img2.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img3.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img4.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img5.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img6.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+								<li>
+									<a href="#" title=""><img src="images/carusel/img7.jpg" alt="" /></a>
+									<div class="edit_img">
+										<span>upload image</span>
+										<a href="#" class="btn_black">browse</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a href="#" title="Scroll to the left"><span>Previous</span></a></div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a href="#" title="Scroll to the right"><span>Next</span></a></div>
+					</div>
+				</div>				
+				<!-- // end of carousel-demo2 -->
+			</div>
+			<!--   /carusel block    -->
+			
+			<!--   center column     -->
+			<div class="column_third">
+				<div class="logic_block red_logic_block biography_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_biography_btn"></a>
+					<h2>biography</h2>
+					<div class="clear"></div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tincidunt odio, quis cursus metus. Proin pulvinar massa eget enim mattis sagittis. Nunc a risus ante. Fusce nec faucibus ex. Vivamus ornare id mauris sollicitudin mattis. Aliquam ornare dui vitae purus consequat iaculis. Quisque consequat consequat magna sed fermentum. Class aptent taciti sociosqu ad litora </p>
+					<textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tincidunt odio, quis cursus metus. Proin pulvinar massa eget enim mattis sagittis. Nunc a risus ante. Fusce nec faucibus ex. Vivamus ornare id mauris sollicitudin mattis. Aliquam ornare dui vitae purus consequat iaculis. Quisque consequat consequat magna sed fermentum. Class aptent taciti sociosqu ad litora </textarea>
+				</div>
+				<!------>
+				<div class="logic_block red_logic_block" style="height: 210px;">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_video_biography_btn"></a>
+					<h2>video biography</h2>
+					<div class="clear"></div>
+					<div class="video_biography" id="video_biography">
+					
+					</div>
+					<div class="browse_video" id="browse_video">
+						<!-- filename to display to the user -->
+						<p id="file-name" class="margin-10 bold-10 gray_input"></p>
+						<div class="clear"></div>
+						<!-- Hide this from the users view with css display:none; -->
+						<input class="display-none" id="file-type" type="file" size="4" name="file"/>
+						<!-- Style this button with type image or css whatever you wish -->
+						<input id="browse-click" type="button" class="button" value="Browse"/>
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block gray_logic_block">
+					<h2>shout out</h2>
+					<div class="clear"></div>
+					<!-- Start photoslider-bullets -->
+					<div class="sliderkit photoslider-bullets">
+						<div class="sliderkit-nav">
+							<div class="sliderkit-nav-clip">
+								<ul>
+									<li><a href="#" title="Photo sample 01"></a></li>
+									<li><a href="#" title="Photo sample 02"></a></li>
+									<li><a href="#" title="Photo sample 03"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<h5>This kid is a rising star!</h5>
+								<table class="members">
+									<tr>
+										<td style="width: 70px;">
+											<img src="images/img_sm.png">
+										</td>
+										<td>
+											<a href="#" class="member">tommy thompson1</a>
+											<div calss="clear"></div>
+											<span>123.455 followers</span>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="sliderkit-panel">
+								<h5>This kid is a rising star!</h5>
+								<table class="members">
+									<tr>
+										<td style="width: 70px;">
+											<img src="images/img_sm.png">
+										</td>
+										<td>
+											<a href="#" class="member">tommy thompson2</a>
+											<div calss="clear"></div>
+											<span>123.455 followers</span>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="sliderkit-panel">
+								<h5>This kid is a rising star!</h5>
+								<table class="members">
+									<tr>
+										<td style="width: 70px;">
+											<img src="images/img_sm.png">
+										</td>
+										<td>
+											<a href="#" class="member">tommy thompson3</a>
+											<div calss="clear"></div>
+											<span>123.455 followers</span>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- // end of photoslider-bullets -->
+				</div>
+				<!------>
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_audio_btn"></a>
+					<h2>my tracks</h2>
+					<div class="clear"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="audio_player">
+						<img src="images/audio_player.jpg" style="width: 323px; height: auto;">
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_video_btn"></a>
+					<h2>my videos</h2>
+					<div class="clear"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="video_player">
+						<img src="images/video_player.jpg" style="width: 323px; height: auto;">
+					</div>
+					<div class="clear20"></div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+					<div class="property_block">
+						<img class="track_img" src="images/track.png">
+						<label>My Video 1</label>
+						<span>2013 Elf on the Mountain, Cher</span>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<!--   /center column     -->
+			
+			<!--   right column     -->
+			<div class="column_third">
+				<div class="logic_block gray_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_discography_btn"></a>
+					<h2>discography</h2>
+					<div class="clear"></div>
+					<div class="discography_block_data">
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+						<div class="property_block">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<span>2013 Elf on the Mountain, Cher</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<form class="discography_block_data_edit">
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+						<div class="property_block property_block_border">
+							<label>Producer</label>
+							<div class="clear"></div>
+							<input type="text" value="2013 Elf on the Mountain, Cher">
+							<div class="clear"></div>
+						</div>
+					</form>
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block player">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id=""></a>
+					<h2 class="fl">skills</h2>
+					<span class="block_header_right">Ranked #1, Los Angeles</span>
+					<div class="clear30"></div>
+					<div class="sliderkit photoslider-bullets">
+						<div class="sliderkit-nav">
+							<div class="sliderkit-nav-clip">
+								<ul>
+									<li><a href="#" title="Photo sample 01"></a></li>
+									<li><a href="#" title="Photo sample 02"></a></li>
+									<li><a href="#" title="Photo sample 03"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block player">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id=""></a>
+					<h2 class="fl">skills</h2>
+					<span class="block_header_right">Ranked #1, Los Angeles</span>
+					<div class="clear30"></div>
+					<div class="sliderkit photoslider-bullets">
+						<div class="sliderkit-nav">
+							<div class="sliderkit-nav-clip">
+								<ul>
+									<li><a href="#" title="Photo sample 01"></a></li>
+									<li><a href="#" title="Photo sample 02"></a></li>
+									<li><a href="#" title="Photo sample 03"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block player">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id=""></a>
+					<h2 class="fl">skills</h2>
+					<span class="block_header_right">Ranked #1, Los Angeles</span>
+					<div class="clear30"></div>
+					<div class="sliderkit photoslider-bullets">
+						<div class="sliderkit-nav">
+							<div class="sliderkit-nav-clip">
+								<ul>
+									<li><a href="#" title="Photo sample 01"></a></li>
+									<li><a href="#" title="Photo sample 02"></a></li>
+									<li><a href="#" title="Photo sample 03"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<div class="audio_play_block">
+									<div class="audio_play_block_left">
+										<span class="main_name">Bass Guitar</span>
+										<span class="style_name">hip hop</span>
+									</div>
+									<div class="audio_play_block_right">
+										<img src="images/play.png">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!------>
+				<div class="logic_block" id="calendar_logic_block">
+					<a href="javascript: void(0)" class="edit_btn btn_changes" id="edit_snapshot_btn"></a>
+					<h2 class="fl">september, 2014</h2>
+					<a href="#" class="calendar_arrow calendar_arrow_next"></a>
+					<a href="#" class="calendar_arrow calendar_arrow_prew"></a>
+					<div class="clear"></div>
+					<table class="calendar">
+						<tr>
+							<td style="width: 8px;">
+								<span class="been"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="now"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+								<span class="place">Park Avenue Rutherford, NJ 070707</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="will_be"></span>
+							</td>
+							<td class="data">
+								<span class="f40">17</span>
+								<div class="clear"></div>
+								<span class="f18">sep</span>
+							</td>
+							<td>
+								<span class="event">EVENT WITH TICKETS</span>
+								<span class="time">1:00 am - 2:00 am</span>
+								<span class="place">Park Avenue Rutherford, NJ 070707</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block" id="remove_track">
+					<a href="javascript: void(0)" class="save_btn" id="">save</a>
+					<h2 class="fl">skills</h2>
+					<form class="skills">
+						<input type="text" value="Bass Guitar">
+						<input type="text" value="Ranked #1, Los Angeles">
+						<input type="text" value="HIP HOP">
+						<div class="clear"></div>
+						<div>
+							<!-- filename to display to the user -->
+							<p id="file-name-1" class="margin-10 bold-10 gray_input"></p>
+							<div class="clear"></div>
+							<!-- Hide this from the users view with css display:none; -->
+							<input class="display-none" id="file-type-1" type="file" size="4" name="file"/>
+							<!-- Style this button with type image or css whatever you wish -->
+							<input id="browse-click-1" type="button" class="button" value="Browse"/>
+						</div>
+						<div class="clear"></div>
+						<input type="sumit" value="remove track" class="remove">
+					</form>	
+				</div>
+				<!------>
+				<div class="logic_block red_border_logic_block" id="add_track">
+					<a href="javascript: void(0)" class="save_btn" id="">save</a>
+					<h2 class="fl">skills</h2>
+					<form class="skills">
+						<input type="text" value="Bass Guitar">
+						<input type="text" value="Ranked #1, Los Angeles">
+						<input type="text" value="HIP HOP">
+						<div class="clear"></div>
+						<div>
+							<!-- filename to display to the user -->
+							<p id="file-name-2" class="margin-10 bold-10 gray_input"></p>
+							<div class="clear"></div>
+							<!-- Hide this from the users view with css display:none; -->
+							<input class="display-none" id="file-type-2" type="file" size="4" name="file"/>
+							<!-- Style this button with type image or css whatever you wish -->
+							<input id="browse-click-2" type="button" class="button" value="Browse"/>
+						</div>
+						<div class="clear"></div>
+						<input type="sumit" value="add track" class="remove">
+					</form>	
+				</div>
+			</div>
+			<!--   /right column     -->
+			<div class="clear"></div>
+		</div>
+		<!--/content-->
+		<!--FOOTER-->
+		<div class="footer content">
+			<a href="#" class="footer_logo"><img src="images/footer_logo_color.png"></a>
+			<span class="copy">&copy;2014 mymusiclaunch.com, all rights reserved</span>
+			
+			<div class="footer_soc">
+				<a href="#" class="soc_1"></a>
+				<a href="#" class="soc_2"></a>
+				<a href="#" class="soc_3"></a>
+				<a href="#" class="soc_4"></a>
+				<a href="#" class="soc_5"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/footer-->
+	</body>
+</html>

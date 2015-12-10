@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>homepage</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href='css/fonts.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+		<link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.selectbox.min.js"></script> 
+		<script>
+			/*-------------bootstrap-tabs---------------*/
+			$('#myTab a').click(function (e) {
+				e.preventDefault()
+				$(this).tab('show')
+			});
+			$( document ).ready(function() {
+				/*-------------login-pop-up-show/register-pop-up-show---------------*/
+				$("#login").click(function(){
+					$("#popup_login").css('display', 'block');
+				});
+				$("#register").click(function(){
+					$("#popup_register").css('display', 'block');
+				});
+				$(document).on('click.mWindow', function(e){
+					if ($(e.target).closest('#popup_login').length == 0 && $(e.target).closest('#login').length == 0) {
+						$('#popup_login').hide(); 
+					}
+					if ($(e.target).closest('#popup_register').length == 0 && $(e.target).closest('#register').length == 0) {
+						$('#popup_register').hide(); 					
+					}					
+				});
+				/*-------------/login-pop-up-show/register-pop-up-show---------------*/
+				$('#check_school').click(function(){
+					$('#schools').toggle();
+				})
+				$(function(){
+				   $("#adv_search").click(function () {
+					  $(this).text(function(i, text){
+						  return text === "Advanced search" ? "Basic search" : "Advanced search";
+					  })
+					  $("#advanced_block").toggle();
+				   });
+				})
+			});
+			
+
+		</script>
+		    <script>  
+			(function($) {  
+				$(function() {  
+					$('select').selectbox();  
+				})  
+			})(jQuery)  
+			</script>  
+	</head>
+	<body class="home">
+		<div class="popup popup_login" id="popup_login">
+			<div class="popup_content">
+				<form class="login_form">
+					<h6>login</h6>
+					<input type="text" name="username" placeholder="username">
+					<input type="password" name="password" placeholder="password">
+					<input type="submit" value="submit">
+				</form>
+				<div class="register">
+					<h6>register</h6>
+					<a href="#" class="button">students</a>
+					<div class="clear"></div>
+					<a href="#" class="button">music professionals</a>
+					<div class="clear"></div>
+					<a href="#" class="button">alumni</a>
+					<div class="clear"></div>
+					<a href="#" class="button">industry experts</a>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup_register" id="popup_register">
+			<div class="popup_content">
+				<form class="login_form popup_border">
+					<h6>login</h6>
+					<input type="text" name="username" placeholder="username">
+					<input type="password" name="password" placeholder="password">
+					<input type="submit" value="submit">
+				</form>
+				<div class="register popup_border">
+					<h6>student register</h6>
+					<p class="f10 gray brandon">MyMusicLaunch is currently available only to students & alumni of participating music schools and verified professionals within the music industry. Check here to see if your school is a partner with MML. If you know your school is participating and have not received (or accidently deleted) your welcome email, please enter the details below so we can locate your account.</p>
+					<a href="javascript: void(0);" class="f10 red brandon check_school" id="check_school">check participating schools</a>
+					<table class="schools" id="schools">
+						<thead>
+							<tr>
+								<th>School 1</th>
+								<th>School 2</th>
+								<th>School 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								<td>Text 2</td>
+								<td>Text 3</td>
+							</tr>
+							<tr>
+								<td>Text 1</td>
+								<td>Text 2</td>
+								<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+							</tr>
+							<tr>
+								<td>Text 1</td>
+								<td>Text 2</td>
+								<td>Text 3</td>
+							</tr>
+						</tbody>
+					</table>
+					<form class="login_form">
+						<input type="text" name="username" placeholder="username">
+						<input type="text" name="name" placeholder="name">
+						<input type="email" name="email" placeholder="email">
+						<input type="text" name="school" placeholder="school">
+						<input type="password" name="password" placeholder="password">
+						<input type="submit" value="submit">
+					</form>
+				</div>
+				<form class="login_form">
+					<h6>music professionals</h6>
+					<input type="text" name="username" placeholder="username">
+					<input type="text" name="name" placeholder="name">
+					<input type="text" name="title" placeholder="title">
+					<input type="text" name="company" placeholder="company">
+					<input type="text" name="primary role" placeholder="primary role">
+					<input type="email" name="email" placeholder="email">
+					<input type="tel" name="phone" placeholder="phone">
+					<input type="password" name="password" placeholder="password">
+					<input type="submit" value="submit">
+				</form>
+				<a href="#" class="info_btn"></a>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--HEADER-->
+		<div class="header">
+			<div class="content">
+				<span class="logo"><a href="#"></a></span>
+				<div class="login_block">
+					<a href="#" class="login" id="register">register</a>
+					<a href="#" class="login" id="login">login</a>
+				</div>
+				<div class="clear350"></div>
+				<p class="tc">THE MUSIC INDUSTRY'S<br>top emerging talent live here.</p>
+				<div class="nav">
+					<ul>
+						<li class="first_lavel home_collaborate">
+							<a href="#">collaborate</a>
+							<ul class="second_lavel">
+								<li>
+									<a href="#">
+										<span>LOCAL MUSIC TRENDS</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>THE HOT 20</h3>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>EMERGING 40</h3>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>BREAKING 10</h3>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="first_lavel home_discover">
+							<a href="#">discover</a>
+							<ul class="second_lavel">
+								<li>
+									<a href="#">
+										<span>LOCAL MUSIC TRENDS</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>THE HOT 20</h3>
+										<span>CITY-BY-CITY CHARTS</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>EMERGING 40</h3>
+										<span>CITY-BY-CITY CHARTS</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<h3>BREAKING 10</h3>
+										<span>CITY-BY-CITY CHARTS</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="first_lavel home_mentor">
+							<a href="#">mentor</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="bread_crumbs">
+					<a href="#">THARITH PERERA<span>/</span></a>
+					<a href="#">DJ JABBA<span>/</span></a>
+					<a href="#">LOS ANGELES</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<a href="#" class="inside">What's inside?<span>take a peak!</span></a>
+		</div>
+		<!--/header-->
+		
+		<!--CONTENT-->
+		<div class="content">
+			<div class="search_block">
+				<!-- Nav tabs -->
+				<ul class="tablist" role="tablist">
+				  <li class="active"><a href="#ranking" role="tab" data-toggle="tab">search by ranking</a><div class="clear"></div></li>
+				  <li><a href="#all" role="tab" data-toggle="tab">search all</a><div class="clear"></div></li>
+				  <li><a href="#charts" role="tab" data-toggle="tab">search charts</a><div class="clear"></div></li>
+				</ul>
+				<div class="clear"></div>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="ranking">
+						<form class="search_form">
+							<select>
+								<option disabled="disabled" selected>City</option>
+								<option>City1</option>
+								<option>City2</option>
+								<option>City3</option>
+							</select>
+							<select>
+								<option disabled="disabled" selected>Skills</option>
+								<option>Skills1</option>
+								<option>Skills2</option>
+								<option>Skills3</option>
+							</select>
+							<select>
+								<option disabled="disabled" selected>Genres</option>
+								<option>Genres1</option>
+								<option>Genres2</option>
+								<option>Genres3</option>
+							</select>
+							<div id="advanced_block" class="advanced_block">
+								<div class="clear10"></div>
+								<input type="text" placeholder="name">
+								<select>
+									<option disabled="disabled" selected>account type</option>
+									<option>student</option>
+									<option>alumni</option>
+									<option>professional</option>
+									<option>panelist</option>
+									<option>mentor</option>
+								</select>
+								<select>
+									<option disabled="disabled" selected>school</option>
+									<option>school1</option>
+									<option>school1</option>
+									<option>school1</option>
+									<option>school1</option>
+									<option>school1</option>
+									<option>school1</option>
+								</select>
+								<select>
+									<option disabled="disabled" selected>roles</option>
+									<option>skill 1</option>
+									<option>skill 1</option>
+									<option>skill 1</option>
+									<option>skill 1</option>
+									<option>skill 1</option>
+									<option>skill 1</option>
+								</select>
+							</div>
+							<input type="button" class="button white_button brandon" value="search">
+							<a href="javascript:void(0);" id="adv_search" class="button brandon adv_search">Advanced search</a>
+							<div class="clear"></div>
+						</form>
+					</div>
+					<div class="tab-pane" id="all">
+						<form class="search_form">
+							<input type="text" placeholder="enter search term" style="width:500px;">
+							<input type="button" class="button white_button brandon" value="search">
+							<div class="clear"></div>
+						</form>
+					</div>
+					<div class="tab-pane" id="charts">
+						<form class="search_form">
+							<select>
+								<option disabled="disabled" selected>City</option>
+								<option>City1</option>
+								<option>City2</option>
+								<option>City3</option>
+							</select>
+							<select>
+								<option disabled="disabled" selected>Chart</option>
+								<option>Chart1</option>
+								<option>Chart2</option>
+								<option>Chart3</option>
+							</select>
+							<select>
+								<option disabled="disabled" selected>Date</option>
+								<option>Date1</option>
+								<option>Date2</option>
+								<option>Date3</option>
+							</select>
+							<input type="button" class="button white_button brandon" value="search">
+							<div class="clear"></div>
+						</form>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/content-->
+		<!--FOOTER-->
+		<div class="footer content">
+			<a href="#" class="footer_logo"><img src="images/footer_logo.png"></a>
+			<span class="copy">&copy;2014 mymusiclaunch.com, all rights reserved</span>
+			
+			<div class="footer_soc">
+				<a href="#" class="soc_1"></a>
+				<a href="#" class="soc_2"></a>
+				<a href="#" class="soc_3"></a>
+				<a href="#" class="soc_4"></a>
+				<a href="#" class="soc_5"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--/footer-->
+	</body>
+</html>
